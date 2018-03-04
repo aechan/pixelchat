@@ -1,0 +1,8 @@
+{
+  "name": "pixelchat",
+  "app_id": "2745f24c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
