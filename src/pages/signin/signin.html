@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form id="form" (ngSubmit)="onSignInSubmit()">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="data.email" name="email" required=""></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password" [(ngModel)]="data.password" name="password" required=""></ion-input>
+            </ion-item>
+          <ion-item>
+            <button ion-button full class="pictobutton" round type="submit">Sign in</button>          
+          </ion-item>
+        </ion-list>
+      </form>
+</ion-content>

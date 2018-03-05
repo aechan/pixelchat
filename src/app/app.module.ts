@@ -5,12 +5,25 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { SigninPage } from '../pages/signin/signin';
+import { ChatPage } from '../pages/chat/chat';
+import { RoomPage } from '../pages/room/room';
+import { AddRoomPage } from '../pages/add-room/add-room';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { SignupPage } from '../pages/signup/signup';
+import { CanvasDraw } from '../components/canvas-draw/canvas-draw';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    SigninPage,
+    ChatPage,
+    RoomPage,
+    AddRoomPage,
+    WelcomePage,
+    SignupPage,
+    CanvasDraw
   ],
   imports: [
     BrowserModule,
@@ -19,11 +32,17 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    SigninPage,
+    ChatPage,
+    RoomPage,
+    AddRoomPage,
+    WelcomePage,
+    SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

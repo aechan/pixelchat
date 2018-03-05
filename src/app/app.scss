@@ -14,3 +14,38 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@font-face {
+    font-family: 'Pictochat';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../assets/fonts/Pictochat.ttf') format('truetype'),
+}
+
+html {
+    font-size: 20px;
+}
+
+ion-content {
+    background-image: url('../assets/imgs/pictochat-bg.png');
+}
+
+.toolbar-background-md {
+    border-style: solid !important;
+    border-color: white;
+    border-radius: 10px;
+    border-width: 3px;
+}
+.toolbar-background-ios {
+    border-style: solid !important;
+    border-color: white !important;
+    border-radius: 10px;
+    border-width: 3px !important;
+}
+
+.pictobutton {
+    border-radius: 10px;
+    background-color: black !important;
+    border-color: white;
+    border-width: 4px;
+    border-style: solid;
+}

@@ -1,0 +1,19 @@
+page-welcome {
+    #welcome {
+        text-align: center;
+        margin-top: 50%;
+    }
+
+    .pictobutton {
+        display: none;
+    }
+
+    .slide-up {
+        bottom: 0px !important;
+    }
+
+    .slide-down
+    {
+        bottom: -475px !important;
+    }
+}
