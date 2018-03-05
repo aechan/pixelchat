@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { RoomPage } from '../room/room';
-import * as firebase from 'Firebase';
+import * as firebase from 'firebase';
 import { CanvasDraw } from '../../components/canvas-draw/canvas-draw';
 import { NativeAudio } from '@ionic-native/native-audio';
 /**
