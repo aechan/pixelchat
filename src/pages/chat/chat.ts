@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Content, AlertController } from 'ionic-angular';
 import { RoomPage } from '../room/room';
 import * as firebase from 'firebase';
 import { CanvasDraw } from '../../components/canvas-draw/canvas-draw';
 import { NativeAudio } from '@ionic-native/native-audio';
+import * as $ from 'jquery';
+
 /**
  * Generated class for the ChatPage page.
  *
@@ -29,7 +31,7 @@ export class ChatPage {
   myColor: string;
   audio: NativeAudio;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, nativeAudio: NativeAudio) {
+  constructor(public navCtrl: NavController, public alert: AlertController, public navParams: NavParams, nativeAudio: NativeAudio) {
     this.roomkey = this.navParams.get("key") as string;
     this.nickname = firebase.auth().currentUser.displayName;
     this.roomname = this.navParams.get("roomname") as string;
@@ -93,6 +95,45 @@ export class ChatPage {
 
   setColor(col) {
     this.canvas.changeColour(col);
+    if(col === "#000") {
+      $("#pen").addClass("activetool");
+      $("#eraser").removeClass("activetool");
+    } else {
+      $("#pen").removeClass("activetool");
+      $("#eraser").addClass("activetool");
+    }
+  }
+
+  clearCanvas() {
+    this.canvas.clearCanvas();
+  }
+
+  addText() {
+    let alert = this.alert.create({
+      title: 'Add text',
+      inputs: [
+        {
+          name: 'text',
+          placeholder: 'some text'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Add',
+          handler: data => {
+            this.canvas.addText(data.text);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   randomColor() {

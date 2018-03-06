@@ -40,11 +40,12 @@
     <canvas-draw #canvas></canvas-draw>
     <div id="controls">
       <div style="float:left;">
-        <button class="controlbtn"><img src="./assets/imgs/texticon.png"/></button>
-        <button class="controlbtn" (click)="setColor('#000')"><img src="./assets/imgs/penicon.png"/></button>
-        <button class="controlbtn" (click)="setColor('#fff')"><img src="./assets/imgs/eraseicon.png"/></button>
+        <button class="controlbtn" id="text" (click)="addText()"><img src="./assets/imgs/texticon.png"/></button>
+        <button class="controlbtn activetool" id="pen" (click)="setColor('#000')"><img src="./assets/imgs/penicon.png"/></button>
+        <button class="controlbtn" id="eraser" (click)="setColor('#fff')"><img src="./assets/imgs/eraseicon.png"/></button>
       </div>
       <div style="float:right;">
+          <button class="controlbtn" (click)="clearCanvas()"><img src="./assets/imgs/clearicon.png"/></button>
           <button class="controlbtn" (click)="sendPicto()"><img src="./assets/imgs/sendicon.png"/></button>
         </div>
     </div>

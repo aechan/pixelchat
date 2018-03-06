@@ -28,13 +28,13 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      nativeAudio.preloadComplex('bgm', './assets/sounds/miiplaza.mp3', 1,1,0).then(() => {
+      nativeAudio.preloadComplex('bgm', 'assets/sounds/miiplaza.mp3', 1,1,0).then(() => {
         nativeAudio.loop('bgm');
       })
-      nativeAudio.preloadSimple('roomenter', './assets/sounds/enterroom.mp3');
-      nativeAudio.preloadSimple('send', './assets/sounds/sendmessage.mp3');
-      nativeAudio.preloadSimple('got', './assets/sounds/gotmessage.mp3');
-      nativeAudio.preloadSimple('bloop', './assets/sounds/bloop.mp3');
+      nativeAudio.preloadSimple('roomenter', 'assets/sounds/enterroom.mp3');
+      nativeAudio.preloadSimple('send', 'assets/sounds/sendmessage.mp3');
+      nativeAudio.preloadSimple('got', 'assets/sounds/gotmessage.mp3');
+      nativeAudio.preloadSimple('bloop', 'assets/sounds/bloop.mp3');
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           this.rootPage = RoomPage;
